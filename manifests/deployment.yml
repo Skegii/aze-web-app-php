@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azurekubernetes-6dfd"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azurekubernetes-6dfd"
+  template:
+    metadata:
+      labels:
+        app: "azurekubernetes-6dfd"
+    spec:
+      containers:
+        - name: "azurekubernetes-6dfd"
+          image: "azureregisty.azurecr.io/azurekubernetes"
+          ports:
+          - containerPort: 80
